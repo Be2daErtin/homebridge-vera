@@ -20,6 +20,24 @@ Couldn't find a config.json file at '/Users/bertinjacobs/.homebridge/config.json
 Edit the config.json file by adding the IP of your Vera.
 The plugin has the ability to ignore certain device ID's. Just add these ID's as shown in the sample-config.json file.
 
+#Vera setup
+This plugin will update the devices in the homekit app by creating an http server for each discovered device.
+
+Step 1: Create a Scene on Vera
+Create a scene to be triggered when a device turns on AND off.
+You'll need to create a scene for every discovered device (Working on a fix for this)
+
+Step 2: Paste this code in LUUP Code to be executed:
+
+function HTTPGet(URL)
+     local status, result = luup.inet.wget(URL, 3)
+end
+
+HTTPGet('http://192.168.1.20:9039')
+
+NOTE: Change the above port for your device.
+The port is calculated by 9000 + vera device id.
+
 #Supported Devices
 The following devices have been tested:
 
