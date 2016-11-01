@@ -1,0 +1,50 @@
+{
+  "name": "homebridge-Vera",
+  "version": "0.0.1",
+  "description": "Vera plugin for homebridge: https://github.com/nfarina/homebridge",
+  "license": "ISC",
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": {
+    "name": "Bertin Jacobs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Be2daErtin/homebridge-vera"
+  },
+  "dependencies": {
+    "request": "^2.65.0"
+  },
+  "gitHead": "8871ee998f09cdef41ac81e33f7a1ba0df05b3bb",
+  "bugs": {
+    "url": "https://github.com/Be2daErtin/homebridge-vera/issues"
+  },
+  "homepage": "https://github.com/Be2daErtin/homebridge-vera/issues",
+  "_id": "homebridge-http@0.0.2",
+  "_shasum": "59b9ddfec51a524d4597a29bb25c92d1a0bc7060",
+  "_from": "homebridge-http@*",
+  "_resolved": "https://registry.npmjs.org/homebridge-http/-/homebridge-http-0.0.2.tgz",
+  "scripts": {},
+  "_npmVersion": "2.10.1",
+  "_nodeVersion": "0.12.4",
+  "_npmUser": {
+    "name": "rudders",
+    "email": "bertinjacobs@gmail.com"
+  },
+  "dist": {
+    "shasum": "59b9ddfec51a524d4597a29bb25c92d1a0bc7060",
+    "tarball": "http://registry.npmjs.org/homebridge-http/-/homebridge-http-0.0.2.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "Bertin",
+      "email": "bertinjacobs@gmail.com"
+    }
+  ],
+  "directories": {}
+}
