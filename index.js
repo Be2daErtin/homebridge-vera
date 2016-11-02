@@ -1,7 +1,7 @@
 ///////////////////////////////////////
-// VeraLite Plugin for HomeBridge    //
-// Version 2016_1031.0               //
-// Author: Bertin					 //
+// Vera Plugin for HomeBridge    //
+// Version 2016_1101.0               //
+// Author: Bertin		          			 //
 ///////////////////////////////////////
 
 var Accessory, Service, Characteristic;
@@ -26,7 +26,8 @@ var readValue = 0;
 
 if(!fs.existsSync('./setup.js'))
 {
-  console.log("No config exists");
+  console.log("No setup file exists. Creating one...");
+
   //return;
 }
 
@@ -41,7 +42,7 @@ module.exports = function(homebridge){
   VeraSensor = require('./accessories/sensor')(Service, Characteristic, communicationError);
   VeraSecurity = require('./accessories/security')(Service, Characteristic, communicationError);
 
-  homebridge.registerPlatform("homebridge-VeraLite", "VeraLite", VeraLitePlatform, false);
+  homebridge.registerPlatform("homebridge-vera", "Vera", VeraLitePlatform, false);
 }
 
 function VeraLitePlatform(log, config, api) {
@@ -140,6 +141,7 @@ VeraLitePlatform.prototype = {
          break;
       case 'securityset':
          url = "http://" + this.host + ":3480/data_request?id=lu_action&output_format=xml&DeviceNum=" + device_id + "&serviceId=urn:upnp-empuk-net:serviceId:SimpleAlarm1&action=" + value;
+         console.log(url);
       break;
 
 
@@ -186,12 +188,6 @@ VeraLitePlatform.prototype = {
               device.category = 0;
               return;
             }
-            else if (device.id == 67){
-              that.log("OVERRIDE this device: " + device.name + "("+ device.id + ")");
-              device.category = 4;
-              //return;
-            }
-
           }//for
 
           switch (device.category)

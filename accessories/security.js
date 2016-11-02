@@ -1,4 +1,4 @@
-//Version: 2016_0515.0
+//Version: 2016_1102.0
 var Service, Characteristic, communicationError;
 
 module.exports = function (oService, oCharacteristic, oCommunicationError) {
@@ -66,17 +66,17 @@ VeraSecurity.prototype = {
     this.log("Set SecurityState: " + this.name + " (" + this.id + "): " + value);
 
     if (value == 0){
-      armType = 'StayArm'
+      armType = 'Home'
     }
     else if (value == 1){
-      armType = 'AwayArm'
+      armType = 'Away'
 
     }
     else if (value == 2){
-      armType = 'NightArm'
+      armType = 'Night'
     }
     else if (value == 3){
-      armType = 'Disarm'
+      armType = 'Off'
     }
     else {
       this.log.error("Don't know how to convert: " + value)
@@ -103,7 +103,7 @@ VeraSecurity.prototype = {
     informationService
       .setCharacteristic(Characteristic.Manufacturer, "Vera Device")
       .setCharacteristic(Characteristic.Model, "Security System")
-      .setCharacteristic(Characteristic.SerialNumber, "Vera Device id:");
+      .setCharacteristic(Characteristic.SerialNumber, "Vera Device id: " + this.id);
 
     securityService
       .getCharacteristic(Characteristic.SecuritySystemCurrentState)

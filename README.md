@@ -46,6 +46,7 @@ The following devices have been tested:
 * Fibaro Dimmer 2 (Removed for now)
 * Fibaro RGBW (Yes! It has a colour wheel) (Removed for now)
 * Aeon Gen5 6-in-1 Sensor
+* Security Alarm integration (Requires Vera Plugin)
 
 #Known Issues
 The Aeon sensor seems to be only partially supported. This could be due to functionality issues on the front-end apps.
