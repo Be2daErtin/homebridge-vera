@@ -3,9 +3,25 @@ Vera plugin for homebridge
 
 This plugin is created to connect Vera to your homekit using homebridge by nfarina. (https://github.com/nfarina/homebridge)
 
+#Supported Features
+The following features are supported (Using Vera UI7):
+
+Vera Device categories:
+* 2 - Dimmers
+* 3 - Switches
+* 4 - Motion Sensor
+* 16 - Humidity Sensor
+* 17 - Temperature Sensor
+* 18 - Light Sensor
+* 22 - Security Panel (Using my plugin found here)
+* RGBW removed as I couldn't test it
+
+Other Features
+* When devices are triggered by the vera and not homekit, the status of the device will change. See Vera setup below.
+* Ignore devices that you do not want to add to HomeKit. See Configuration below.
 
 #Installation
-##Working progress (Using OsX as an example)
+##Work in progress (Using OsX as an example)
 
 Step 1: Install HomeBridge  
 $ sudo npm install -g homebridge  
@@ -14,7 +30,7 @@ Step 2: Run HomeBridge
 $ homebridge  
 You should see the following message (if no plugins are installed)  
 No plugins found. See the README for information on installing plugins.  
-Couldn't find a config.json file at '/Users/bertinjacobs/.homebridge/config.json'. Look at config-sample.json for examples of how to format your config.js and add your home accessories.  
+Couldn't find a config.json file at '/Users/<User>/.homebridge/config.json'. Look at config-sample.json for examples of how to format your config.js and add your home accessories.  
 
 #Configuration
 Edit the config.json file by adding the IP of your Vera.
@@ -37,16 +53,6 @@ HTTPGet('http://192.168.1.20:9039')
 
 NOTE: Change the above port for your device.
 The port is calculated by 9000 + vera device id.
-
-#Supported Devices
-The following devices have been tested:
-
-* VeraLite UI7 (Although it shoud work on Vera3 and VeraEdge)
-* Fibaro Dimmer 
-* Fibaro Dimmer 2
-* Fibaro RGBW (Yes! It has a colour wheel) (Removed for now)
-* Aeon Gen5 6-in-1 Sensor
-* Security Alarm integration (Requires Vera Plugin)
 
 #Known Issues
 The Aeon sensor seems to be only partially supported. This could be due to functionality issues on the front-end apps.
