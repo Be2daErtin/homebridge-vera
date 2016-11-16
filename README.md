@@ -42,8 +42,8 @@ The port is calculated by 9000 + vera device id.
 The following devices have been tested:
 
 * VeraLite UI7 (Although it shoud work on Vera3 and VeraEdge)
-* Fibaro Dimmer (Removed for now)
-* Fibaro Dimmer 2 (Removed for now)
+* Fibaro Dimmer 
+* Fibaro Dimmer 2
 * Fibaro RGBW (Yes! It has a colour wheel) (Removed for now)
 * Aeon Gen5 6-in-1 Sensor
 * Security Alarm integration (Requires Vera Plugin)

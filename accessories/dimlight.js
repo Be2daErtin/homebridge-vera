@@ -1,4 +1,4 @@
-//Version: 2016_0515.0
+//Version: 2016_0616.0
 var Service, Characteristic, communicationError;
 var http = require('http');
 
@@ -57,16 +57,19 @@ VeraDimLight.prototype = {
   },
   setPowerState: function(powerOn, callback) {
     var that = this;
+    this.log(powerOn)
     if (powerOn) {
-  		this.log("Set PowerState: " + this.name + "(" + this.id + "): ON");
-      this.client.setDevice(this.id, 'turnOn', 100 ,function(data){
-        if (data) {
-          that.log("Successfully set power state on the '"+that.name+"' to on");
-          callback()
-        }else{
-          callback(communicationError)
-        }
-      }.bind(this))
+  		 this.log("Set PowerState: " + this.name + "(" + this.id + "): ON");
+       callback()//Use brightness to 100 to turn on
+      // //return //Rather use brightness set to do this
+      // this.client.setDevice(this.id, 'turnOn', 100 ,function(data){
+      //   if (data) {
+      //     that.log("Successfully set power state on the '"+that.name+"' to on");
+      //     callback()
+      //   }else{
+      //     callback(communicationError)
+      //   }
+      // }.bind(this))
     }else{
   		this.log("Set PowerState: " + this.name + "(" + this.id + "): OFF");
       this.client.setDevice(this.id, 'turnOff', 0, function(data){
@@ -124,6 +127,7 @@ VeraDimLight.prototype = {
           response.end('It Works!! Path Hit: ' + request.url);
           console.log('Server request received: ' + PORT);
           lightbulbService.getCharacteristic(Characteristic.On).getValue();
+          lightbulbService.getCharacteristic(Characteristic.Brightness).getValue();
       }
 
       //Create a server
