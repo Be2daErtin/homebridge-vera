@@ -18,7 +18,8 @@ Vera Device categories:
 
 Other Features
 * When devices are triggered by the vera and not homekit, the status of the device will change. See Vera setup below.
-* Ignore devices that you do not want to add to HomeKit. See Configuration below.
+* Ignore devices that you do not want to add to HomeKit. See Configuration below
+* Display Vera ID's of the devices in HomeKit
 
 #Installation
 ##Work in progress (Using OsX as an example)
